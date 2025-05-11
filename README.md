@@ -1,6 +1,6 @@
 # NKN Network Crawler
 
-A Python script to crawl the NKN network, prioritize APAC nodes, and generate optimized `RelayAddrs` for `nkn.conf`.
+A Python script to crawl the NKN network, prioritize APAC nodes, and generate optimized `RelayAddrs` for nknd `config.json`.
 
 ## Features
 - Crawls up to 5,000 NKN nodes with APAC seed prioritization.

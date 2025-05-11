@@ -24,7 +24,7 @@ A Python script to crawl the NKN (New Kind of Network) network, discover neighbo
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/nkn-crawler.git
+   git clone https://github.com/havok2/nkn-scan.git
    cd nkn-crawler
    python3 crawler.py
 

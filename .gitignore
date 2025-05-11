@@ -1,0 +1,33 @@
+# Logs and outputs
+nkn_crawler.log
+neighbors.json
+rtt_histogram.png
+
+# Cache files
+geo_cache.pkl
+whois_cache.pkl
+
+# GeoLite2 databases (proprietary, user must download)
+# geoip/GeoLite2-City.mmdb
+# geoip/GeoLite2-ASN.mmdb
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+*.egg-info/
+dist/
+build/

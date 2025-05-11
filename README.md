@@ -22,7 +22,7 @@ A Python script to crawl the NKN (New Kind of Network) network, discover neighbo
   - An [ipinfo.io](https://ipinfo.io) API token for enhanced geolocation (set as `IPINFO_TOKEN` environment variable).
 
 ## Installation
-1. See INSTALL file
+1. See INSTALL.txt file
 
 ### Option 2: Use Prebuilt Binary (Linux)
 1. Download the latest binary from the [Releases](https://github.com/havok2/nkn-scan/releases) page.
@@ -30,4 +30,4 @@ A Python script to crawl the NKN (New Kind of Network) network, discover neighbo
 3. Make executable: `chmod +x crawler`
 4. Install `hping3`: `sudo apt-get install hping3`
 5. Create a `geoip/` directory and place `GeoLite2-City.mmdb` and `GeoLite2-ASN.mmdb` in it (download from [MaxMind](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data)).
-6. Run: `./crawler --wallet YOUR_WALLET_ADDRESS`
+6. Run: `./crawler`

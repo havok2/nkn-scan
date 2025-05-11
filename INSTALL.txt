@@ -1,0 +1,107 @@
+## Installation Instructions
+
+Follow these steps to set up and run the `crawler.py` script for crawling the NKN network.
+
+### Prerequisites
+- **Python 3.6+**: Ensure Python is installed. Check with:
+  ```bash
+  python3 --version
+
+  Download from python.org if needed.
+Git: To clone the repository.
+
+MaxMind GeoLite2 Databases: Sign up at maxmind.com and download GeoLite2-City.mmdb and GeoLite2-ASN.mmdb.
+
+Setup Steps
+Clone the Repository
+bash
+
+git clone https://github.com/havok2/nkn-scan.git
+cd nkn-scan
+
+Create a Virtual Environment
+bash
+
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+Install Python Dependencies
+Install required Python modules:
+bash
+
+pip install requests ipwhois ping3 tqdm geoip2 matplotlib
+
+Install System Dependencies
+Ubuntu/Debian:
+bash
+
+sudo apt-get install hping3 whois libfreetype6-dev libpng-dev pkg-config
+
+macOS (with Homebrew):
+bash
+
+brew install hping whois freetype pkg-config
+
+Windows: Use WSL for hping3 and whois, or rely on ping3 (ICMP ping) without them.
+
+Set Up GeoLite2 Databases
+Create a geoip directory:
+bash
+
+mkdir geoip
+
+Download GeoLite2-City.mmdb and GeoLite2-ASN.mmdb from MaxMind and place them in the geoip directory.
+
+(Optional) Configure IPinfo Token
+For improved geolocation accuracy, get an API token from ipinfo.io and set it:
+bash
+
+export IPINFO_TOKEN='your_token_here'  # On Windows: set IPINFO_TOKEN=your_token_here
+
+(Optional) Add APAC Seeds
+Create apac_seeds.json in the project directory to prioritize APAC nodes. Example:
+json
+
+[
+  {"url": "http://seed.apac.nkn.org:30003", "id": "node_id_here"}
+]
+
+Source seeds from NKN Forum. Without this, default seeds are used.
+
+Running the Script
+Run the crawler with your NKN wallet address:
+bash
+
+python3 crawler.py --wallet YOUR_WALLET_ADDRESS
+
+Options:
+--no-color: Disable colored output.
+
+--debug-geo: Enable geolocation debug logs.
+
+--clear-cache: Clear geolocation and WHOIS caches.
+
+Troubleshooting
+ModuleNotFoundError: Install missing modules with pip install <module_name>.
+
+GeoLite2 Errors: Verify geoip/GeoLite2-City.mmdb and geoip/GeoLite2-ASN.mmdb are present.
+
+hping3 Not Found: Install hping3 or use ping3 (ICMP fallback).
+
+No Valid Seeds: Check apac_seeds.json or network connectivity to default seeds.
+
+Rate Limits: Set IPINFO_TOKEN for ipinfo.io or wait for ip-api.com rate limits to reset.
+
+Output
+The script generates:
+neighbors.json: Crawled neighbor data.
+
+rtt_histogram.png: Ping latency histogram.
+
+geo_cache.pkl, whois_cache.pkl: Cached geolocation and WHOIS data.
+
+nkn_crawler.log: Log file.
+
+For issues, check the NKN Forum or open an issue on this repository.
+
+

@@ -1,19 +1,28 @@
-# NKN Network Crawler
+# NKN Crawler
 
-A Python script to crawl the NKN network, prioritize APAC nodes, and generate optimized `RelayAddrs` for nknd `config.json`.
+A Python script to crawl the NKN (New Kind of Network) network, discover neighbors, perform latency tests, and optimize neighbor selection for NKN mining nodes. The script prioritizes low-latency, stable nodes (especially in APAC regions) and generates a configuration for `nkn.conf`.
 
 ## Features
-- Crawls up to 5,000 NKN nodes with APAC seed prioritization.
-- Pings 3,000 nodes using TCP (`hping3`) with ICMP fallback.
-- Prioritizes APAC nodes (e.g., JP, SG, HK) in scoring.
-- Generates `neighbors.json`, RTT histogram, and `nkn.conf` `RelayAddrs`.
+- Crawls NKN network to discover up to 5000 neighbors.
+- Performs TCP or ICMP ping tests to measure latency, variance, and packet loss.
+- Prioritizes APAC and low-latency nodes for better mining performance.
+- Generates a detailed summary with geolocation and provider analysis.
+- Outputs `RelayAddrs` for `nkn.conf` to optimize NKN node configuration.
+- Supports caching for geolocation and WHOIS lookups to improve performance.
+- Creates an RTT histogram for latency analysis.
 
 ## Prerequisites
-- **System**: Linux (due to `hping3` and `whois`).
-- **Python**: 3.6+.
-- **GeoLite2 Databases**: [MaxMind GeoLite2 City and ASN](https://www.maxmind.com) (free account required).
-- **Packages**:
-  ```bash
-  apt-get update
-  apt-get install hping3 whois python3-pip
-  pip3 install -r requirements.txt
+- **Python 3.6+**
+- **System Dependencies**:
+  - `hping3` (for TCP pings): `sudo apt-get install hping3` (Debian/Ubuntu)
+- **GeoLite2 Databases**:
+  - Download `GeoLite2-City.mmdb` and `GeoLite2-ASN.mmdb` from [MaxMind](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data).
+  - Place them in the `geoip/` directory.
+- **Optional**:
+  - An [ipinfo.io](https://ipinfo.io) API token for enhanced geolocation (set as `IPINFO_TOKEN` environment variable).
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/nkn-crawler.git
+   cd nkn-crawler

@@ -27,3 +27,11 @@ A Python script to crawl the NKN (New Kind of Network) network, discover neighbo
    git clone https://github.com/yourusername/nkn-crawler.git
    cd nkn-crawler
    python3 crawler.py
+
+### Option 2: Use Prebuilt Binary (Linux)
+1. Download the latest binary from the [Releases](https://github.com/havok2/nkn-scan/releases) page.
+2. Extract if zipped: `unzip crawler.zip`
+3. Make executable: `chmod +x crawler`
+4. Install `hping3`: `sudo apt-get install hping3`
+5. Create a `geoip/` directory and place `GeoLite2-City.mmdb` and `GeoLite2-ASN.mmdb` in it (download from [MaxMind](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data)).
+6. Run: `./crawler --wallet YOUR_WALLET_ADDRESS`

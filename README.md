@@ -22,11 +22,7 @@ A Python script to crawl the NKN (New Kind of Network) network, discover neighbo
   - An [ipinfo.io](https://ipinfo.io) API token for enhanced geolocation (set as `IPINFO_TOKEN` environment variable).
 
 ## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/havok2/nkn-scan.git
-   cd nkn-crawler
-   python3 crawler.py
+1. See INSTALL file
 
 ### Option 2: Use Prebuilt Binary (Linux)
 1. Download the latest binary from the [Releases](https://github.com/havok2/nkn-scan/releases) page.
